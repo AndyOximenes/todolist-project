@@ -4,25 +4,25 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-var items = [];
+let items = [];
 
 app.set("view engine", "ejs");
 
 app.get("/", (req, res) => {
-  var today = new Date();
-  var options = {
+  let today = new Date();
+  let options = {
     weekday: "long",
     day: "numeric",
     month: "long"
   };
 
-  var day = today.toLocaleDateString("en-US", options);
+  let day = today.toLocaleDateString("en-US", options);
 
   res.render("list", { kindOfDay: day, newListItems: items });
 });
 
 app.post("/", (req, res) => {
-  var item = req.body.newItem;
+  let item = req.body.newItem;
 
   items.push(item);
 
