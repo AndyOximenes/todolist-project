@@ -97,5 +97,11 @@ footer {
 
 a {
   text-decoration: none;
-  color: grey;
+  color: rgb(32, 31, 31);
+  opacity: 0.5;
+}
+
+a:hover {
+  color: black;
+  transition: color 250ms;
 }
